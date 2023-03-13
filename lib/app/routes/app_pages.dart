@@ -8,11 +8,11 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN;
+  static const INITIAL = Routes.SALESPERSON_TRACKER;
 
   static final routes = [
     GetPage(
-      name: _Paths.LOGIN,
+      name: _Paths.SALESPERSON_TRACKER,
       page: () => SalesmanTrackerView(),
       binding: SalesmanTrackerBinding(),
     ),

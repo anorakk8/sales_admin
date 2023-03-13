@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:sales_admin/app/constants/colours.dart';
+import 'package:sales_admin/app/constants/ui.dart';
 import 'package:sales_admin/app/constants/fonts.dart';
 import 'package:sales_admin/app/modules/salesman_tracker/widgets/city_searchbox.dart';
-
-import 'package:sales_admin/app/utils/sidenav.dart';
+import 'package:sales_admin/app/widgets/side_nav/controller/navigation_controller.dart';
+import 'package:sales_admin/app/widgets/side_nav/view/side_nav.dart';
 
 import '../controllers/salesman_tracker_controller.dart';
 
@@ -20,7 +20,7 @@ class SalesmanTrackerView extends GetView<SalesmanTrackerController> {
         //   centerTitle: true,
         // ),
         body: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      SideNav(),
+      SideNav(PageIndex.SALES_PERSON_TRACKER),
       Expanded(
         child: Column(children: [
           Row(
@@ -33,7 +33,7 @@ class SalesmanTrackerView extends GetView<SalesmanTrackerController> {
                   height: 63.5,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: FilterBarSalesmanTracker(),
+                    // child: FilterBarSalesmanTracker(),
                   ),
                 ),
               )

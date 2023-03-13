@@ -7,6 +7,8 @@ import 'app/routes/app_pages.dart';
 void main() {
   runApp(
     GetMaterialApp(
+      useInheritedMediaQuery: true,
+      theme: ThemeData(useMaterial3: true),
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,

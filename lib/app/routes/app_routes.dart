@@ -3,10 +3,10 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const LOGIN = _Paths.LOGIN;
+  static const SALESPERSON_TRACKER = _Paths.SALESPERSON_TRACKER;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const LOGIN = '/login';
+  static const SALESPERSON_TRACKER = '/salesperson_tracker';
 }
