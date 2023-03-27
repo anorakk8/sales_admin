@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:sales_admin/app/constants/ui.dart';
-import 'package:sales_admin/app/constants/fonts.dart';
-import 'package:sales_admin/app/modules/salesman_tracker/widgets/city_searchbox.dart';
+import 'package:sales_admin/app/widgets/data_table/custom_data_table.dart';
 import 'package:sales_admin/app/widgets/side_nav/controller/navigation_controller.dart';
 import 'package:sales_admin/app/widgets/side_nav/view/side_nav.dart';
 
@@ -26,16 +24,10 @@ class SalesmanTrackerView extends GetView<SalesmanTrackerController> {
           Row(
             children: [
               Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      border: Border(
-                          bottom: BorderSide(color: Colours.LIGHT_GREY))),
-                  height: 63.5,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    // child: FilterBarSalesmanTracker(),
-                  ),
-                ),
+                child: CustomDataTable(data: {
+                  'ID': salesmen.map((e) => e.id).toList(),
+                  'Name': salesmen.map((e) => e.name).toList(),
+                }, onRowSelect: (index) => () {}, onRowEdit: (index) => () {}),
               )
             ],
           )
@@ -44,3 +36,16 @@ class SalesmanTrackerView extends GetView<SalesmanTrackerController> {
     ]));
   }
 }
+
+class Salesman {
+  String id;
+  String name;
+  int salesAmount;
+
+  Salesman({required this.id, required this.name, required this.salesAmount});
+}
+
+List<Salesman> salesmen = [
+  Salesman(id: 'BLR1', name: "John", salesAmount: 30000),
+  Salesman(id: 'DL3', name: "Maggi", salesAmount: 45000)
+];
