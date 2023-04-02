@@ -68,10 +68,23 @@ class CustomDataTableSource extends DataTableSource {
   }
 
   getDataCells(List<String> data, int index) {
-    List<DataCell> dataCells = [DataCell(Text('${index + 1}'))];
+    List<DataCell> dataCells = [];
 
-    for (int i = 0; i < data.length; i++) {
-      dataCells.add(DataCell(Text(data[i])));
+    switch (index) {
+      case 0:
+        for (int i = 0; i <= data.length; i++) {
+          dataCells.add(DataCell(TextField()));
+        }
+        break;
+
+      default:
+        dataCells = [DataCell(Text('${index + 1}'))];
+
+        for (int i = 0; i < data.length; i++) {
+          dataCells.add(DataCell(Text(data[i])));
+        }
+
+        break;
     }
 
     return dataCells;
